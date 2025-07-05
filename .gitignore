@@ -1,0 +1,20 @@
+# Ignore virtual environment
+venv/
+
+# Ignore .env file
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# VSCode / IDE folders
+.vscode/
+.idea/
+
+# Django static files (if collected)
+staticfiles/
+
+# Database (if local sqlite, optional)
+*.sqlite3
