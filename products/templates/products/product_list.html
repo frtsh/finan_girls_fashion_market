@@ -438,6 +438,23 @@
         </div>
     </section>
 
+    <!-- Our Shopping Gallery Section -->
+    {% if shop_images %}
+    <section class="shop-gallery my-5 text-center">
+        <h2 class="section-title">Our Shopping Gallery</h2>
+        <div class="row justify-content-center">
+            {% for img in shop_images %}
+            <div class="col-md-4 mb-4">
+                <img src="{{ img.image.url }}" alt="{{ img.title }}" class="img-fluid rounded shadow-sm" style="max-height: 300px;">
+                {% if img.title %}
+                <div class="mt-2 text-muted">{{ img.title }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
     <!-- Products Section -->
     <section id="products" class="products-section">
         <div class="container">
@@ -510,7 +527,7 @@
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
                             <i class="fas fa-quote-left fa-2x mb-3" style="color:#a259ff;"></i>
-                            <p class="card-text">"ዝገርም መስተንግድትን ፈጣን ዝኮነ delivery ኣለዎም, ዘልኣክዎ ጫማ ካብ ዝሓሰብክዎ ብላዕሊ እዩ ጰኒሕኒ, የቐንየለይ ፍናን ማእኽል ዕዳጋ።"</p>
+                            <p class="card-text">"ዝገርም መስተንግድትን ፈጣን ዝኮነ delivery ኣለዎም, ዘልኣክዎ ጫማ ካብ ዝሓሰብክዎ ብላዕሊ እዩ ጰኒሕኒ, የቐንየለይ ፍናን ማእከል ዕዳጋ።"</p>
                             <div class="d-flex align-items-center mt-3">
                                 
                                 <span class="fw-bold">Liya Tsegay.</span>

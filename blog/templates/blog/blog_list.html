@@ -307,7 +307,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <i class="fas fa-heart me-2"></i>Finan Fashion
+                <i class="fas fa-heart me-2"></i>Finan Girls Fashion
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -350,7 +350,7 @@
         <div class="container">
             <div class="hero-content fade-in">
                 <h1 class="hero-title">Fashion Blog</h1>
-                <p class="hero-subtitle">Discover the latest trends, style tips, and fashion inspiration</p>
+                <p class="hero-subtitle">ብዛዕባ ፍናን ማእከል ዕዳጋ ወቕታዊ ሓበሬታን እዋናዊ ኣልባሳትን: </p>
                 <a href="#blog" class="btn btn-light btn-lg px-4 py-2">
                     <i class="fas fa-arrow-down me-2"></i>Read Our Posts
                 </a>
@@ -358,64 +358,97 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog-section">
-        <div class="container">
-            <h2 class="section-title">Latest Fashion Posts</h2>
-            
-            {% if posts %}
-                <div class="row">
-                    {% for post in posts %}
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card fade-in">
-                            {% if post.cover_image %}
-                                <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-image">
-                            {% else %}
-                                <div class="blog-image d-flex align-items-center justify-content-center bg-light">
-                                    <i class="fas fa-image fa-3x text-muted"></i>
-                                </div>
-                            {% endif %}
-                            <div class="blog-body">
-                                <h5 class="blog-title">{{ post.title }}</h5>
-                                <div class="blog-meta">
-                                    <span><i class="fas fa-calendar me-1"></i>{{ post.created_at|date:"M d, Y" }}</span>
-                                    <span><i class="fas fa-user me-1"></i>Admin</span>
-                                </div>
-                                <p class="blog-excerpt">{{ post.content|truncatewords:20 }}</p>
-                                <a href="#" class="read-more">
-                                    <i class="fas fa-arrow-right me-1"></i>Read More
-                                </a>
-                            </div>
+    <!-- Blog Intro Section -->
+    <section class="blog-intro text-center my-4">
+        <h2 class="section-title" id = "blog">Latest Trends & Shop News</h2>
+    </section>
+
+    <!-- Latest Trends Section -->
+    <section class="latest-trends my-5">
+        <h3 class="mb-4 text-center">Latest Trends</h3>
+        <div class="row">
+            {% for post in trends %}
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-card fade-in">
+                    {% if post.cover_image %}
+                        <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-image">
+                    {% endif %}
+                    <div class="blog-body">
+                        <h5 class="blog-title">{{ post.title }}</h5>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar me-1"></i>{{ post.created_at|date:"M d, Y" }}</span>
                         </div>
+                        <p class="blog-excerpt">{{ post.content|truncatewords:20 }}</p>
                     </div>
-                    {% endfor %}
                 </div>
-            {% else %}
-                <div class="empty-state">
-                    <div class="empty-icon">
-                        <i class="fas fa-blog"></i>
+            </div>
+            {% empty %}
+            <p class="text-muted">No trend posts yet.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Shop News & Announcements Section -->
+    <section class="shop-news my-5">
+        <h3 class="mb-4 text-center">Shop News & Announcements</h3>
+        <div class="row">
+            {% for post in announcements %}
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-card fade-in">
+                    {% if post.cover_image %}
+                        <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-image">
+                    {% endif %}
+                    <div class="blog-body">
+                        <h5 class="blog-title">{{ post.title }}</h5>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar me-1"></i>{{ post.created_at|date:"M d, Y" }}</span>
+                        </div>
+                        <p class="blog-excerpt">{{ post.content|truncatewords:20 }}</p>
                     </div>
-                    <h4 class="empty-title">No Blog Posts Yet</h4>
-                    <p class="empty-text">We're working on creating amazing fashion content for you. Check back soon for the latest trends and style tips!</p>
-                    <a href="{% url 'product_list' %}" class="btn btn-primary">
-                        <i class="fas fa-shopping-bag me-1"></i>Browse Products
-                    </a>
                 </div>
-            {% endif %}
+            </div>
+            {% empty %}
+            <p class="text-muted">No shop news or announcements yet.</p>
+            {% endfor %}
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" style="background: linear-gradient(135deg, #232946, #34495e); color: #fff;">
         <div class="container">
-            <div class="footer-content">
-                <h5 class="footer-title">Finan Girls Fashion Market</h5>
-                <p class="footer-text">© 2025 Finan Girls Fashion Market | By Furtuna G.</p>
-                <div class="mt-3">
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-pinterest"></i></a>
+            <div class="row align-items-center py-4">
+               
+            </div>
+            <!-- Smart Comment Section in Footer -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-12 col-md-8">
+                    <section class="comments my-3">
+                        <div class="card p-4 shadow-lg border-0" style="background: #f8fafc; border-radius: 18px;">
+                            <h3 class="mb-4 text-center" style="color: #232946;">Comments About Our Shop</h3>
+                            <div class="d-flex justify-content-center">
+                                <div class="w-100" style="max-width: 500px;">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <div class="mb-2">
+                                            <input type="text" name="name" class="form-control" placeholder="Your name" required style="background: #fff; border-radius: 8px;">
+                                        </div>
+                                        <div class="mb-2">
+                                            <textarea name="comment" class="form-control" placeholder="Your comment" rows="3" required style="background: #fff; border-radius: 8px;"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100" style="background: #232946; border: none; border-radius: 8px;">Submit Comment</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Address/Contact Info Below -->
+                            <div class="mt-4 text-center" style="color: #232946;">
+                                <h5 class="footer-title mb-2">Finan Girls Fashion Market</h5>
+                                <p class="footer-text mb-1"><i class="fas fa-map-marker-alt me-2"></i> ቐዳማይ ወያነ, መቐለ, ትግራይ</p>
+                                <p class="footer-text mb-1"><i class="fas fa-envelope me-2"></i> mikigere@gmail.com</p>
+                                <p class="footer-text mb-1"><i class="fas fa-phone me-2"></i> +251985781426 </p>
+                                <p class="footer-text mb-1"><i class="fab fa-telegram me-2"></i> <a href="https://t.me/finangirlsfashion" class="text-dark" target="_blank">@finangirlsfashion</a></p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
