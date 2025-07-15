@@ -1,0 +1,243 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Classic Pink Handbag",
+      "description": "A stylish pink handbag perfect for any occasion.",
+      "price": "29.99",
+      "category": 1,
+      "image": "https://res.cloudinary.com/dcpqzsgnb/image/upload/v1751734757/zqcdmkqxzxvhnvgsv2si.jpg",
+      "created_at": "2025-07-08T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Sparkle Sneakers",
+      "description": "Trendy sneakers with a touch of sparkle for girls on the go.",
+      "price": "34.99",
+      "category": 2,
+      "image": "",
+      "created_at": "2025-07-08T10:05:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Rainbow Backpack",
+      "description": "Colorful backpack with plenty of space for school or travel.",
+      "price": "24.99",
+      "category": 1,
+      "image": "",
+      "created_at": "2025-07-08T10:10:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Elegant Party Dress",
+      "description": "A beautiful dress for special occasions.",
+      "price": "49.99",
+      "category": 3,
+      "image": "",
+      "created_at": "2025-07-08T10:15:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Summer Sandals",
+      "description": "Comfortable and cute sandals for summer days.",
+      "price": "19.99",
+      "category": 2,
+      "image": "",
+      "created_at": "2025-07-08T10:20:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Denim Jacket",
+      "description": "Trendy denim jacket for a cool, casual look.",
+      "price": "39.99",
+      "category": 3,
+      "image": "",
+      "created_at": "2025-07-08T10:25:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "name": "Floral Headband",
+      "description": "Cute floral headband to complete any outfit.",
+      "price": "9.99",
+      "category": 1,
+      "image": "",
+      "created_at": "2025-07-08T10:30:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "name": "Sporty Sneakers",
+      "description": "Comfortable sneakers for active girls.",
+      "price": "27.99",
+      "category": 2,
+      "image": "",
+      "created_at": "2025-07-08T10:35:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "name": "Mini Crossbody Bag",
+      "description": "A small, stylish crossbody bag for essentials.",
+      "price": "15.99",
+      "category": 1,
+      "image": "",
+      "created_at": "2025-07-08T10:40:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "name": "Party Flats",
+      "description": "Shiny flats perfect for parties and special events.",
+      "price": "22.99",
+      "category": 2,
+      "image": "",
+      "created_at": "2025-07-08T10:45:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "name": "Glitter Purse",
+      "description": "A sparkling purse for special occasions.",
+      "price": "18.99",
+      "category": 1,
+      "image": "",
+      "created_at": "2025-07-08T11:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "name": "Canvas Tote Bag",
+      "description": "Eco-friendly tote bag for everyday use.",
+      "price": "12.99",
+      "category": 1,
+      "image": "",
+      "created_at": "2025-07-08T11:05:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "name": "Bow Ballet Flats",
+      "description": "Chic ballet flats with a cute bow detail.",
+      "price": "21.99",
+      "category": 2,
+      "image": "",
+      "created_at": "2025-07-08T11:10:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "name": "Polka Dot Dress",
+      "description": "Fun and playful polka dot dress for girls.",
+      "price": "32.99",
+      "category": 3,
+      "image": "",
+      "created_at": "2025-07-08T11:15:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "name": "Velvet Hair Clips",
+      "description": "Set of 5 velvet hair clips in assorted colors.",
+      "price": "7.99",
+      "category": 1,
+      "image": "",
+      "created_at": "2025-07-08T11:20:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "name": "Winter Boots",
+      "description": "Warm and stylish boots for cold days.",
+      "price": "44.99",
+      "category": 2,
+      "image": "",
+      "created_at": "2025-07-08T11:25:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "name": "Sequin Party Dress",
+      "description": "Shiny sequin dress for festive occasions.",
+      "price": "54.99",
+      "category": 3,
+      "image": "",
+      "created_at": "2025-07-08T11:30:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "name": "Denim Skirt",
+      "description": "Classic denim skirt for a casual look.",
+      "price": "27.99",
+      "category": 3,
+      "image": "",
+      "created_at": "2025-07-08T11:35:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+      "name": "Rainbow Socks Set",
+      "description": "Pack of 7 colorful socks for every day of the week.",
+      "price": "11.99",
+      "category": 1,
+      "image": "",
+      "created_at": "2025-07-08T11:40:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+      "name": "Slip-On Canvas Shoes",
+      "description": "Easy slip-on shoes for active girls.",
+      "price": "23.99",
+      "category": 2,
+      "image": "",
+      "created_at": "2025-07-08T11:45:00Z"
+    }
+  }
+] 
+

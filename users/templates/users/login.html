@@ -56,7 +56,7 @@
         <div class="login-card bg-white p-4">
             <div class="brand">Finan Girls Fashion Market</div>
             <h3 class="mb-3 text-center">Login</h3>
-            <form method="post">{% csrf_token %}
+<form method="post">{% csrf_token %}
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username" required>
@@ -66,7 +66,7 @@
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary w-100" style="background: linear-gradient(135deg, #ff6b9d, #ff8fab); border: none;">Login</button>
-            </form>
+</form>
             <div class="mt-3 text-center">
                 <span>Don't have an account? <a href="{% url 'register' %}" class="text-decoration-none" style="color:#ff6b9d;">Register</a></span>
             </div>

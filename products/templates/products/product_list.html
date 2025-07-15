@@ -370,8 +370,8 @@
     <section class="hero-section">
         <div class="container">
             <div class="hero-content fade-in">
-                <h1 class="hero-title">Discover Trendy Girls Fashion</h1>
-                <p class="hero-subtitle">Shop the latest styles in bags, shoes, and accessories</p>
+                <h1 class="hero-title"> Cute Outfits Ahead!!!  👗 🎀 💃 </h1>
+                <p class="hero-subtitle"> ዝደለይዎ ዓይነት ክዳን ፣ ጫማ ን ቦርሳን ኣባና ይረክቡ </p>
                 <a href="#products" class="btn btn-light btn-lg px-4 py-2">
                     <i class="fas fa-shopping-cart me-2"></i>Shop Now
                 </a>
@@ -382,14 +382,24 @@
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
+            <h2 style="text-align: center;"> ናብ ፍናን ማእከል ዕዳጋ እንትመፁ, ዝረክብዎ ግልጋሎት:</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="feature-card slide-in">
                         <div class="feature-icon">
                             <i class="fas fa-tshirt"></i>
                         </div>
-                        <h4 class="feature-title">Trendy Fashion</h4>
-                        <p class="feature-text">Discover the latest trends in girls fashion with our curated collection of stylish clothing and accessories.</p>
+                        <h4 class="feature-title"> ግዚኦም ዝሓለዉ ፋሽናት! </h4>
+                        <p class="feature-text">Discover the latest trends in Finan girls fashion with our curated collection of stylish clothing and accessories.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card slide-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="feature-title">Quality ዘለዎም</h4>
+                        <p class="feature-text">Premium quality materials and craftsmanship ensure your fashion items last and look great.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -398,19 +408,10 @@
                             <div class="feature-icon">
                                 <i class="fas fa-blog"></i>
                             </div>
-                            <h4 class="feature-title">Fashion Blog</h4>
+                            <h4 class="feature-title">እዋናዊ ሓበሬታት</h4>
                             <p class="feature-text">Read our latest fashion tips, trends, and style guides to stay updated with the latest fashion news.</p>
                         </div>
                     </a>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card slide-in">
-                        <div class="feature-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4 class="feature-title">Quality Assured</h4>
-                        <p class="feature-text">Premium quality materials and craftsmanship ensure your fashion items last and look great.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -426,8 +427,10 @@
                         <h4 class="fw-bold mb-3" style="color:#a259ff;">Who We Are</h4>
                         <h5 class="mb-3" style="color:#6ec1e4;">About Finan Girls Fashion Market</h5>
                         <p style="font-size:1.15rem; text-align:justify; color:#2c3e50; max-width: 800px; margin: 0 auto;">
-                            <strong>Finan Girls Fashion Market</strong> is your go-to destination for trendy, high-quality girls' fashion in Ethiopia. We are passionate about empowering young women to express themselves through style. Our curated collection features the latest in bags, shoes, and accessories, all handpicked for quality and flair.<br><br>
-                            Whether you're shopping for a special occasion or everyday chic, our team is here to help you shine. Thank you for supporting a local, women-led business!
+                            <strong>Finan Girls Fashion Market</strong> is your go-to destination for trendy, high-quality girls' fashion in Tigray. We are passionate about empowering young women to express themselves through style. Our curated collection features the latest in clothes, shoes, and bags — all handpicked for quality and flair.<br><br>
+                             Even though we’re based in Mekelle, we proudly deliver to **anywhere in Tigray** — bringing style right to your doorstep!<br><br>
+                             Whether you're shopping for a special occasion or everyday chic, our team is here to help you shine. Thank you for supporting us!
+
                         </p>
                     </div>
                 </div>
@@ -456,7 +459,7 @@
                                 <h5 class="product-title">{{ product.name }}</h5>
                                 <p class="text-muted mb-1">Category: {{ product.category.name }}</p>
                                 <p class="product-description">{{ product.description|truncatewords:15 }}</p>
-                                <div class="product-price">${{ product.price }}</div>
+                                <div class="product-price">ETB{{ product.price }}</div>
                                 {% if user.is_authenticated %}
                                     <a href="{% url 'add_favorite' product.id %}" class="btn-favorite">
                                         <i class="fas fa-heart me-1"></i>Add to Favorites
@@ -489,16 +492,16 @@
     <!-- Customer Opinions Section (replaces Contact & About Us) -->
     <section class="opinions-section py-5" style="background: linear-gradient(135deg, #e0f7fa 60%, #f3e8ff 100%); border-radius: 18px; box-shadow: 0 4px 24px rgba(162,89,255,0.08); width: 100%; margin: 3rem 0; min-height: 420px;">
         <div class="container-fluid px-0">
-            <h2 class="section-title mb-4 text-center">What Our Customers Say</h2>
+            <h2 class="section-title mb-4 text-center">What Our Customers Say(ዓማዊልና ዝበልዎ)</h2>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
                             <i class="fas fa-quote-left fa-2x mb-3" style="color:#a259ff;"></i>
-                            <p class="card-text">"Absolutely love the quality and style! My daughter is obsessed with her new bag. Will definitely shop again!"</p>
+                            <p class="card-text"> "ብጣዕሚ ደስ ልብል ጥራት ዘለዎ ቦርሳ ወሲደ ኔረ፣ ጋለይ ብጣዕሚ እያ ፈትያቶ, thank you so much."</p>
                             <div class="d-flex align-items-center mt-3">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="rounded-circle me-2" width="40" height="40">
-                                <span class="fw-bold">Sara M.</span>
+                                <img src="https://th.bing.com/th/id/OIP.jq6dzhZBeLyUVdo9eOlzQgHaJQ?w=135&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" alt="Customer" class="rounded-circle me-2" width="40" height="40">
+                                <span class="fw-bold">Sara Mehari.</span>
                             </div>
                         </div>
                     </div>
@@ -507,10 +510,10 @@
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
                             <i class="fas fa-quote-left fa-2x mb-3" style="color:#a259ff;"></i>
-                            <p class="card-text">"Fast delivery and amazing customer service. The shoes fit perfectly and look even better in person!"</p>
+                            <p class="card-text">"ዝገርም መስተንግድትን ፈጣን ዝኮነ delivery ኣለዎም, ዘልኣክዎ ጫማ ካብ ዝሓሰብክዎ ብላዕሊ እዩ ጰኒሕኒ, የቐንየለይ ፍናን ማእኽል ዕዳጋ።"</p>
                             <div class="d-flex align-items-center mt-3">
-                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer" class="rounded-circle me-2" width="40" height="40">
-                                <span class="fw-bold">Liya T.</span>
+                                
+                                <span class="fw-bold">Liya Tsegay.</span>
                             </div>
                         </div>
                     </div>
@@ -519,10 +522,10 @@
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
                             <i class="fas fa-quote-left fa-2x mb-3" style="color:#a259ff;"></i>
-                            <p class="card-text">"Great variety and beautiful designs. I always find something special for my girls. Highly recommend!"</p>
+                            <p class="card-text">"ብዓይነቶም ፍልይ ዝበሉን ደረጅኦም ዝሓለዉ ንብለት ስለዝሕዙ, ምርጫኩም ፍናን ማእከል ዕዳጋ ይኩን ይብል።"</p>
                             <div class="d-flex align-items-center mt-3">
-                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer" class="rounded-circle me-2" width="40" height="40">
-                                <span class="fw-bold">Mekdes A.</span>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7zbeobZlBSuaJJzqmNeofXZ10VajA0a8uVQ&s" alt="Customer" class="rounded-circle me-2" width="40" height="40">
+                                <span class="fw-bold">Mekdes Abebe.</span>
                             </div>
                         </div>
                     </div>
@@ -536,11 +539,11 @@
         <div class="container">
             <div class="row align-items-center py-4">
                 <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
-                    <h5 class="footer-title mb-2">Finan Girls Fashion Market</h5>
-                    <p class="footer-text mb-1"><i class="fas fa-map-marker-alt me-2"></i> Bole, Addis Ababa, Ethiopia</p>
-                    <p class="footer-text mb-1"><i class="fas fa-user me-2"></i> Furtuna G.</p>
-                    <p class="footer-text mb-1"><i class="fas fa-envelope me-2"></i> finan.girls.fashion@gmail.com</p>
-                    <p class="footer-text mb-1"><i class="fas fa-phone me-2"></i> +251 912 345 678</p>
+                    <h2 class="footer-title mb-2">Contact Us</h2>
+                    <p class="footer-text mb-1"><i class="fas fa-map-marker-alt me-2"></i> ቐዳማይ ወያነ, መቐለ, ትግራይ</p>
+                    <p class="footer-text mb-1"> <img src="{% static 'images/miki.jpg' %}" alt="Owner" class="rounded-circle me-2" width="30" height="25"> Michale Gebreslassie</p>
+                    <p class="footer-text mb-1"><i class="fas fa-envelope me-2"></i> mikigere@gmail.com</p>
+                    <p class="footer-text mb-1"><i class="fas fa-phone me-2"></i> +251985781426 </p>
                     <p class="footer-text mb-1"><i class="fab fa-telegram me-2"></i> <a href="https://t.me/finangirlsfashion" class="text-white" target="_blank">@finangirlsfashion</a></p>
                 </div>
                 <div class="col-md-6 text-md-end text-center">

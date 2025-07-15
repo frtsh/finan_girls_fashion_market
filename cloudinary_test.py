@@ -19,7 +19,7 @@ cloudinary.config(
 )
 
 # Upload an image
-upload_result = cloudinary.uploader.upload("lalibela.jpg", public_id="shoes")
+upload_result = cloudinary.uploader.upload("", public_id="shoes")
 print(upload_result["secure_url"])
 
 # Optimize delivery
@@ -29,3 +29,5 @@ print(optimize_url)
 # Transform the image
 auto_crop_url, _ = cloudinary_url("shoes", width=500, height=500, crop="auto", gravity="auto")
 print(auto_crop_url)
+
+#python manage.py loaddata products/products_fixture.json
