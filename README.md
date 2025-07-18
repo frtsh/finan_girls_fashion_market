@@ -1,6 +1,6 @@
 # Finan Girls Fashion Market
 
-A modern e-commerce platform for fashion products, built with Django. Easily deployable to Railway with PostgreSQL and Cloudinary support.
+A modern e-commerce platform for fashion products, built with Django. Easily deployable to Render with PostgreSQL and Cloudinary support.
 
 ## Features
 - User registration, login, and profile management
@@ -15,7 +15,7 @@ A modern e-commerce platform for fashion products, built with Django. Easily dep
 - Django
 - PostgreSQL
 - Cloudinary (media storage)
-- Railway (deployment)
+- Render (deployment)
 
 ## Local Setup
 
@@ -50,18 +50,28 @@ A modern e-commerce platform for fashion products, built with Django. Easily dep
    python manage.py runserver
    ```
 
-## Deployment on Railway
+## Deployment on Render
 
 1. Push your code to GitHub.
-2. Create a new project on [Railway](https://railway.app/), connect your repo.
-3. Add the PostgreSQL plugin and map DB variables as described in `DEPLOYMENT_STEPS.md`.
-4. Set all required environment variables (see `.env.example`).
+2. Create a new Web Service on [Render](https://render.com/), connect your repo.
+3. Add a PostgreSQL database in Render and copy the `DATABASE_URL` it provides.
+4. Set all required environment variables in the Render dashboard:
+   - `SECRET_KEY`
+   - `DEBUG` (set to `False`)
+   - `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
+   - `DEFAULT_FILE_STORAGE` (optional, defaults to Cloudinary)
+   - `DATABASE_URL` (from Render PostgreSQL)
+   - `ALLOWED_HOSTS` (optional, defaults to `.onrender.com,localhost,127.0.0.1`)
 5. Add a `Procfile` with:
    ```
-   web: gunicorn config.wsgi
+   web: gunicorn config.wsgi:application
    ```
-6. Deploy! Railway will build and run your app automatically.
-7. Run migrations and create a superuser from the Railway shell:
+6. Set the build command to:
+   ```
+   python manage.py migrate && python manage.py collectstatic --noinput
+   ```
+7. Deploy! Render will build and run your app automatically.
+8. Run migrations and create a superuser from the Render shell:
    ```sh
    python manage.py migrate
    python manage.py createsuperuser
