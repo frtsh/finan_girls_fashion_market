@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
-import os 
+import os
+import sys
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -90,6 +91,13 @@ DATABASES = {
     }
 }
 
+# Use SQLite for tests to avoid permission issues
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
+    }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -142,6 +150,8 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', default='cloudinary_storage.storage.MediaCloudinaryStorage')
+
+LOGIN_URL = '/users/login/'
 
 
 

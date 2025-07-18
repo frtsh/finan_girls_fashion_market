@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background: #fafafa; font-family: 'Poppins', sans-serif; }
-        .register-card { max-width: 450px; margin: 60px auto; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+        .register-card { max-width: 450px; margin: 30px auto 60px auto; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
         .brand { font-weight: 700; color: #ff6b9d; font-size: 2rem; text-align: center; margin-bottom: 1rem; }
     </style>
 </head>
@@ -59,15 +59,53 @@
             <form method="post" novalidate>
                 {% csrf_token %}
                 {% for field in form %}
-                    <div class="mb-3">
-                        <label for="id_{{ field.name }}" class="form-label">{{ field.label }}</label>
-                        <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control{% if field.errors %} is-invalid{% endif %}" id="id_{{ field.name }}" value="{{ field.value|default_if_none:'' }}" {% if field.field.required %}required{% endif %}>
-                        {% if field.errors %}
-                            <div class="invalid-feedback d-block">
-                                {{ field.errors|striptags }}
-                            </div>
-                        {% endif %}
-                    </div>
+                    {% if field.name == 'first_name' %}
+                        <div class="mb-3">
+                            <label for="id_{{ field.name }}" class="form-label">{{ field.label }}</label>
+                            <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control{% if field.errors %} is-invalid{% endif %}" id="id_{{ field.name }}" value="{{ field.value|default_if_none:'' }}" {% if field.field.required %}required{% endif %}>
+                            {% if field.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ field.errors|striptags }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% elif field.name == 'last_name' %}
+                        <div class="mb-3">
+                            <label for="id_{{ field.name }}" class="form-label">{{ field.label }}</label>
+                            <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control{% if field.errors %} is-invalid{% endif %}" id="id_{{ field.name }}" value="{{ field.value|default_if_none:'' }}" {% if field.field.required %}required{% endif %}>
+                            {% if field.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ field.errors|striptags }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% for field in form %}
+                    {% if field.name == 'username' %}
+                        <div class="mb-3">
+                            <label for="id_{{ field.name }}" class="form-label">{{ field.label }}</label>
+                            <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control{% if field.errors %} is-invalid{% endif %}" id="id_{{ field.name }}" value="{{ field.value|default_if_none:'' }}" {% if field.field.required %}required{% endif %}>
+                            {% if field.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ field.errors|striptags }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% for field in form %}
+                    {% if field.name not in 'first_name last_name username' %}
+                        <div class="mb-3">
+                            <label for="id_{{ field.name }}" class="form-label">{{ field.label }}</label>
+                            <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control{% if field.errors %} is-invalid{% endif %}" id="id_{{ field.name }}" value="{{ field.value|default_if_none:'' }}" {% if field.field.required %}required{% endif %}>
+                            {% if field.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ field.errors|striptags }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
                 {% endfor %}
                 {% if form.non_field_errors %}
                     <div class="alert alert-danger">{{ form.non_field_errors|striptags }}</div>
