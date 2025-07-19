@@ -3,8 +3,6 @@ from .models import Product, ShopImage, Review, Category
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
 from django import forms
-from django.http import HttpResponse
-from django.core.management import call_command
 
 class ReviewForm(forms.ModelForm):
     class Meta:
@@ -57,13 +55,4 @@ def product_detail(request, pk):
         'form': form,
         'user_review': user_review,
     })
-
-
-def load_fixtures(request):
-    try:
-        call_command('loaddata', 'products.json')
-        call_command('loaddata', 'shopimages.json')
-        return HttpResponse('Fixtures loaded!')
-    except Exception as e:
-        return HttpResponse(f'Error: {e}', status=500)
 
