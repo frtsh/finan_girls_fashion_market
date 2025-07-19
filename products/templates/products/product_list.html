@@ -486,7 +486,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="product-card fade-in">
                             {% if product.image %}
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImageModal('{{ product.image.url }}', '{{ product.name }}')">
                             {% else %}
                                 <div class="product-image d-flex align-items-center justify-content-center bg-light">
                                     <i class="fas fa-image fa-3x text-muted"></i>
@@ -637,6 +637,27 @@
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
+    </script>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="imageModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="modalImage" src="" alt="" class="img-fluid rounded" style="max-height:70vh;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    function showImageModal(url, name) {
+        document.getElementById('modalImage').src = url;
+        document.getElementById('imageModalLabel').textContent = name;
+    }
     </script>
 </body>
 </html>
