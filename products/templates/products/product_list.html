@@ -198,8 +198,8 @@
         }
 
         .product-image {
-            width: 100%;
-            height: 250px;
+            width: 90%;
+            height: 365px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -448,7 +448,7 @@
         <div class="row justify-content-center">
             {% for img in shop_images %}
             <div class="col-md-4 mb-4">
-                <img src="{{ img.image.url }}" alt="{{ img.title }}" class="img-fluid rounded shadow-sm" style="max-height: 300px;">
+                <img src="{{ img.image.url }}" alt="{{ img.title }}" class="img-fluid rounded shadow-sm" style="max-height: 390px; width: 100%; max-width: 440px; margin: 0 auto; display: block;">
                 {% if img.title %}
                 <div class="mt-2 text-muted">{{ img.title }}</div>
                 {% endif %}
@@ -481,14 +481,14 @@
             </form>
             
             {% if products %}
-                <div class="row g-4">
+                <div class="row g-2"> <!-- Changed from g-4 to g-2 for smaller gap -->
                     {% for product in products %}
-                    <div class="col-lg-4 col-md-6">
-                        <div class="product-card fade-in">
+                    <div class="col-lg-4 col-md-6 mb-2"> <!-- Reduced margin-bottom -->
+                        <div class="product-card fade-in" style="border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.07);">
                             {% if product.image %}
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImageModal('{{ product.image.url }}', '{{ product.name }}')">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" style="cursor:pointer; border-radius: 12px;">
                             {% else %}
-                                <div class="product-image d-flex align-items-center justify-content-center bg-light">
+                                <div class="product-image d-flex align-items-center justify-content-center bg-light" style="border-radius: 12px;">
                                     <i class="fas fa-image fa-3x text-muted"></i>
                                 </div>
                             {% endif %}

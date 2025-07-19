@@ -170,6 +170,11 @@ cloudinary.config(
     api_secret = config('CLOUDINARY_API_SECRET'),
     secure = True
 )
+#import os
+if os.environ.get("RENDER", None):
+         from django.core.management import call_command
+         call_command('loaddata', 'products.json')
+         call_command('loaddata', 'shopimages.json')
 
 
 
