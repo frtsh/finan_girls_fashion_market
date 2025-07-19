@@ -171,10 +171,7 @@ cloudinary.config(
     secure = True
 )
 #import os
-if os.environ.get("RENDER", None):
-         from django.core.management import call_command
-         call_command('loaddata', 'products.json')
-         call_command('loaddata', 'shopimages.json')
+# Removed auto-load data block for Render deployment
 
 
 
