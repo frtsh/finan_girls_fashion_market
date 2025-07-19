@@ -60,7 +60,10 @@ def product_detail(request, pk):
 
 
 def load_fixtures(request):
-    call_command('loaddata', 'products.json')
-    call_command('loaddata', 'shopimages.json')
-    return HttpResponse('Fixtures loaded!')
+    try:
+        call_command('loaddata', 'products.json')
+        call_command('loaddata', 'shopimages.json')
+        return HttpResponse('Fixtures loaded!')
+    except Exception as e:
+        return HttpResponse(f'Error: {e}', status=500)
 
