@@ -420,7 +420,26 @@
         </div>
     </section>
 
-    <!-- About Us Section (above products) -->
+
+
+    <!-- Our Shopping Gallery Section -->
+    {% if shop_images %}
+    <section class="shop-gallery my-5 text-center">
+        <h2 class="section-title">Our Shopping Gallery</h2>
+        <div class="row justify-content-center">
+            {% for img in shop_images %}
+            <div class="col-md-4 mb-4">
+                <img src="{{ img.image.url }}" alt="{{ img.title }}" class="img-fluid rounded shadow-sm" style="max-height: 390px; width: 100%; max-width: 440px; margin: 0 auto; display: block;">
+                {% if img.title %}
+                <div class="mt-2 text-muted">{{ img.title }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+      <!-- About Us Section (above products) -->
     <section class="about-section py-5" style="background: linear-gradient(135deg, #f3e8ff 60%, #e0f7fa 100%); border-radius: 0 0 18px 18px; margin-bottom: 2rem; width: 100%; box-shadow: 0 4px 24px rgba(162,89,255,0.08);">
         <div class="container-fluid px-0">
             <div class="row justify-content-center align-items-center g-0">
@@ -440,23 +459,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Our Shopping Gallery Section -->
-    {% if shop_images %}
-    <section class="shop-gallery my-5 text-center">
-        <h2 class="section-title">Our Shopping Gallery</h2>
-        <div class="row justify-content-center">
-            {% for img in shop_images %}
-            <div class="col-md-4 mb-4">
-                <img src="{{ img.image.url }}" alt="{{ img.title }}" class="img-fluid rounded shadow-sm" style="max-height: 390px; width: 100%; max-width: 440px; margin: 0 auto; display: block;">
-                {% if img.title %}
-                <div class="mt-2 text-muted">{{ img.title }}</div>
-                {% endif %}
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-    {% endif %}
 
     <!-- Products Section -->
     <section id="products" class="products-section">
