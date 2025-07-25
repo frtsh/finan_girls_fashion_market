@@ -49,6 +49,9 @@
         </div>
     </nav>
     <div class="container product-section">
+        <div class="mb-3">
+            <a href="javascript:history.back()" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-1"></i> Back</a>
+        </div>
         <div class="brand">Finan Girls Fashion Market</div>
         <div class="card product-card p-4 mb-4">
             <div class="row">
@@ -76,6 +79,10 @@
                     <p class="text-muted">Category: {{ product.category.name }}</p>
                     <p>{{ product.description }}</p>
                     <h4 class="text-primary">${{ product.price }}</h4>
+                   <p class="mt-2 text-success" style="font-size: 1rem;">
+                       To order, call <a href="tel:+251985781426" style="color:inherit; text-decoration:underline;">+251985781426</a>.<br>
+                       Available in different colors and sizes.
+                   </p>
                 </div>
             </div>
         </div>
