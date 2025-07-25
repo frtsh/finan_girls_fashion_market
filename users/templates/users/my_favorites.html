@@ -71,7 +71,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ fav.product.name }}</h5>
                         <p class="card-text">Category: {{ fav.product.category.name }}</p>
-                        <a href="{% url 'product_list' %}" class="btn btn-outline-primary btn-sm">Shop More</a>
+                        <a href="{% url 'product_list' %}#products" class="btn btn-outline-primary btn-sm">Shop More</a>
+                        <a href="{% url 'remove_favorite' fav.product.id %}" class="btn btn-outline-danger btn-sm ms-2">Unfavorite</a>
                     </div>
                 </div>
             </div>

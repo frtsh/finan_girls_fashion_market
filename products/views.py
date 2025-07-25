@@ -23,6 +23,15 @@ def product_list(request):
         products = products.filter(category_id=category_id)
     shop_images = ShopImage.objects.all()
     categories = Category.objects.all()
+    # Annotate products with is_favorite for current user
+    if request.user.is_authenticated:
+        from users.models import Favorite
+        favorite_ids = set(Favorite.objects.filter(user=request.user).values_list('product_id', flat=True))
+        for product in products:
+            product.is_favorite = product.id in favorite_ids
+    else:
+        for product in products:
+            product.is_favorite = False
     return render(request, 'products/product_list.html', {
         'products': products,
         'shop_images': shop_images,

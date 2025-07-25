@@ -1,3 +1,16 @@
+from django.shortcuts import get_object_or_404, redirect
+from django.http import JsonResponse
+def remove_favorite(request, product_id):
+    if not request.user.is_authenticated:
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({'success': False, 'error': 'Not authenticated'}, status=403)
+        return redirect('login')
+    fav = Favorite.objects.filter(user=request.user, product_id=product_id).first()
+    if fav:
+        fav.delete()
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({'success': True, 'favorited': False})
+    return redirect(request.META.get('HTTP_REFERER', 'my_favorites'))
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from .forms import RegisterForm
@@ -121,6 +134,8 @@ def profile_view(request):
 def add_favorite(request, product_id):
     product = Product.objects.get(id=product_id)
     Favorite.objects.get_or_create(user=request.user, product=product)
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({'success': True, 'favorited': True})
     return redirect('product_list')
 
 @login_required
