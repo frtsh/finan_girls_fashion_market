@@ -20,6 +20,9 @@ def register_view(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
+            # Send welcome email
+            from .utils import send_welcome_email
+            send_welcome_email(user.email, user.first_name)
             login(request, user)
             return redirect('product_list')
     else:

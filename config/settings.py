@@ -1,3 +1,6 @@
+# Email backend (console for development, change for production)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'noreply@finangirlsfashion.com'
 """
 Django settings for config project.
 
