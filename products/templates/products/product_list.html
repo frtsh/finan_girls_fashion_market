@@ -371,7 +371,7 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
+        <div class="container">ws
             <div class="hero-content fade-in">
                 <h1 class="hero-title"> Cute Outfits Ahead!!!  👗 🎀 💃 </h1>
                 <p class="hero-subtitle"> ዝደለይዎ ዓይነት ክዳን ፣ ጫማ ን ቦርሳን ኣባና ይረክቡ </p>
@@ -470,22 +470,57 @@
         <div class="container">
             <h2 class="section-title" id="products">Our Products</h2>
             <!-- Search and Filter Bar -->
-            <form method="get" action="#products" class="row g-3 align-items-center mb-4">
-                <div class="col-md-6">
-                    <input type="text" name="search" class="form-control" placeholder="Search products..." value="{{ search_query }}">
-                </div>
-                <div class="col-md-4">
-                    <select name="category" class="form-select">
-                        <option value="">All Categories</option>
-                        {% for cat in categories %}
-                            <option value="{{ cat.id }}" {% if selected_category == cat.id|stringformat:'s' %}selected{% endif %}>{{ cat.name }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-primary w-100"><i class="fas fa-search me-1"></i>Search</button>
-                </div>
-            </form>
+            <form method="get" action="#products" class="row g-3 align-items-center mb-4 position-relative">
+    <div class="col-md-6 position-relative">
+        <input type="text" name="search" class="form-control" placeholder="Search products..." value="{{ search_query }}" id="product-search-input" autocomplete="off">
+        <div id="product-suggestions" class="list-group position-absolute" style="z-index: 10; display: none; max-height: 220px; overflow-y: auto; box-shadow: 0 4px 16px rgba(162,89,255,0.15); border-radius: 0 0 12px 12px; min-width: 100%; width: 100%;"></div>
+    </div>
+    <div class="col-md-4">
+        <select name="category" class="form-select">
+            <option value="">All Categories</option>
+            {% for cat in categories %}
+                <option value="{{ cat.id }}" {% if selected_category == cat.id|stringformat:'s' %}selected{% endif %}>{{ cat.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary w-100"><i class="fas fa-search me-1"></i>Search</button>
+    </div>
+</form>
+
+<script>
+// Product name suggestions for search input (show all, scrollable, black text)
+(function() {
+    const searchInput = document.getElementById('product-search-input');
+    const suggestionsBox = document.getElementById('product-suggestions');
+    const productNames = [
+        {% for product in products %}'{{ product.name|escapejs }}',{% endfor %}
+    ];
+    function renderSuggestions(list) {
+        suggestionsBox.innerHTML = list.map(name => `<button type="button" class="list-group-item list-group-item-action" style="font-size:1rem; padding:0.6rem 1rem; border:none; border-bottom:1px solid #f3e8ff; background:#fff; color:#222;">${name}</button>`).join('');
+        suggestionsBox.style.display = list.length ? 'block' : 'none';
+    }
+    searchInput.addEventListener('focus', function() {
+        if (productNames.length > 0) {
+            renderSuggestions(productNames);
+        }
+    });
+    searchInput.addEventListener('blur', function() {
+        setTimeout(() => { suggestionsBox.style.display = 'none'; }, 150);
+    });
+    suggestionsBox.addEventListener('mousedown', function(e) {
+        if (e.target && e.target.matches('button')) {
+            searchInput.value = e.target.textContent;
+            suggestionsBox.style.display = 'none';
+        }
+    });
+    searchInput.addEventListener('input', function() {
+        const val = this.value.toLowerCase();
+        const filtered = productNames.filter(name => name.toLowerCase().includes(val));
+        renderSuggestions(filtered);
+    });
+})();
+</script>
             
             {% if products %}
                 <div class="row g-2"> <!-- Changed from g-4 to g-2 for smaller gap -->
